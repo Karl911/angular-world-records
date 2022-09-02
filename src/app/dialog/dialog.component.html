@@ -22,7 +22,7 @@
         </mat-form-field>
         <label for=""><h1>Product Freshness</h1></label>
         <mat-radio-group formControlName="freshness" class="example-radio-group">
-            <mat-radio-button class="example-radio-button" *ngFor="let fresh of freshnessList" value="[fresh]"> 
+            <mat-radio-button class="example-radio-button" *ngFor="let fresh of freshnessList"  [value]="fresh"> 
                 {{fresh}}
             </mat-radio-button>
         </mat-radio-group>
