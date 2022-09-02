@@ -3,7 +3,7 @@
     {
       "productName": "Apple",
       "category": "Fruits",
-      "freshness": "[fresh]",
+      "freshness": "Brand New",
       "price": 100,
       "comment": "This is a fresh apple",
       "date": "2022-09-01T22:00:00.000Z",
@@ -44,6 +44,15 @@
       "comment": "Fresh Bananas !",
       "date": "2022-09-03T22:00:00.000Z",
       "id": 5
+    },
+    {
+      "productName": "OnePlus 8 pro",
+      "category": "Electronics",
+      "freshness": "Refurbished",
+      "price": 1500,
+      "comment": "Good status!",
+      "date": "2022-09-03T22:00:00.000Z",
+      "id": 6
     }
   ],
   "comments": [
