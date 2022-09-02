@@ -41,6 +41,7 @@ export class DialogComponent implements OnInit {
   }
 
   addProduct()  {
+   if (!this.editData) {
     if (this.productForm.valid) {
       this.api.postProduct(this.productForm.value)
       .subscribe({
@@ -54,7 +55,24 @@ export class DialogComponent implements OnInit {
         }
       })
     }
-    //console.log(this.productForm.value);
+   }
+   else {
+    this.updateProduct();
   }
-
+  //console.log(this.productForm.value);
+  }
+  //this.updateProduct
+  updateProduct(){
+     this.api.putProduct(this.productForm.value, this.editData.id)
+     .subscribe({
+      next:(res)=> {
+        alert("Product updated  successfully");
+        this.productForm.reset();
+        this.dialogRef.close('update ');
+      }, 
+      error:()=> {
+        alert("Error while updating the record ")
+      }
+    }) 
+  }
 }
