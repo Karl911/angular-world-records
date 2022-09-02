@@ -17,6 +17,33 @@
       "comment": "This pear is fresh",
       "date": "2022-09-01T22:00:00.000Z",
       "id": 2
+    },
+    {
+      "productName": "Mango",
+      "category": "Fruits",
+      "freshness": "Second Hand",
+      "price": 250,
+      "comment": "This is not fresh",
+      "date": "2022-09-01T22:00:00.000Z",
+      "id": 3
+    },
+    {
+      "productName": "Strawberry",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": 130,
+      "comment": "This is a fresh strawberry",
+      "date": "2022-09-02T22:00:00.000Z",
+      "id": 4
+    },
+    {
+      "productName": "Banana",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": 70,
+      "comment": "Fresh Bananas !",
+      "date": "2022-09-03T22:00:00.000Z",
+      "id": 5
     }
   ],
   "comments": [
