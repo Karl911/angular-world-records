@@ -53,6 +53,15 @@
       "comment": "Good status!",
       "date": "2022-09-03T22:00:00.000Z",
       "id": 6
+    },
+    {
+      "productName": "Apple",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": 100,
+      "comment": "This is a fresh apple",
+      "date": "2022-09-29T22:00:00.000Z",
+      "id": 7
     }
   ],
   "comments": [
