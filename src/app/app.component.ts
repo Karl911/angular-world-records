@@ -41,6 +41,7 @@ export class AppComponent implements OnInit{
       next:(res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
+        this.dataSource.paginator.pageSize=15;
         this.dataSource.sort = this.sort;
       },
       error:(err) =>{

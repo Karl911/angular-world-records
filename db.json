@@ -80,6 +80,24 @@
       "comment": "Good state",
       "date": "2022-09-04T22:00:00.000Z",
       "id": 9
+    },
+    {
+      "productName": "Samsung S10",
+      "category": "Electronics",
+      "freshness": "Brand New",
+      "price": 2500,
+      "comment": "Never used !",
+      "date": "2022-09-04T22:00:00.000Z",
+      "id": 10
+    },
+    {
+      "productName": "Xiaomi RedMi 7",
+      "category": "Electronics",
+      "freshness": "Brand New",
+      "price": 2800,
+      "comment": "Never used !",
+      "date": "2022-09-04T22:00:00.000Z",
+      "id": 11
     }
   ],
   "comments": [
