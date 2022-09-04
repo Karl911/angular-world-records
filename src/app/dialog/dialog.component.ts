@@ -30,6 +30,8 @@ export class DialogComponent implements OnInit {
 
   disableSelect = new FormControl(false);
 
+  genres = ["H", "F"];
+
   categories: Category[] = [
     {value: 'volvo', viewValue: 'Volvo'},
     {value: 'saab', viewValue: 'Saab'},

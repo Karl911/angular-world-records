@@ -30,11 +30,16 @@
             <mat-label>Prénom</mat-label>
             <input formControlName="surname" matInput placeholder="surname">
         </mat-form-field>
-        <mat-form-field appearance="outline">
+<!--         <mat-form-field appearance="outline">
             <mat-label>Sexe</mat-label>
             <input formControlName="sex" matInput placeholder="sex">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
+        </mat-form-field> -->
+        <label><h4>Genre</h4></label>
+        <mat-radio-group formControlName="sex" aria-label="Genre">
+            <mat-radio-button style="margin-left: 10px" class="example-radio-button" *ngFor="let genre of genres" [value]="genre"> 
+                {{genre}}</mat-radio-button>
+          </mat-radio-group>
+        <mat-form-field style="margin-top: 10px" appearance="outline">
             <mat-label>Pays</mat-label>
             <input formControlName="country" matInput placeholder="country">
         </mat-form-field>

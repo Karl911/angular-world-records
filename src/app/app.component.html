@@ -41,9 +41,9 @@
           <td mat-cell *matCellDef="let row"> {{row.surname}} </td>
         </ng-container>
     
-        <!-- Sexe  -->
-        <ng-container matColumnDef="sex">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sexe </th>
+        <!-- Genre  -->
+        <ng-container matColumnDef="genre">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Genre </th>
           <td mat-cell *matCellDef="let row"> {{row.sex}} </td>
         </ng-container>
 
@@ -56,7 +56,7 @@
         <!-- Performance -->
         <ng-container matColumnDef="performance">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Perf. </th>
-          <td mat-cell *matCellDef="let row"> {{row.performance}} </td>
+          <td mat-cell style="font-weight: bold" *matCellDef="let row"> {{row.performance}} </td>
         </ng-container>
 
         <!-- Date -->

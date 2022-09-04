@@ -18,7 +18,7 @@ interface Category {
 })
 export class AppComponent implements OnInit{
   title = 'angular-products';
-  displayedColumns: string[] = ['category', 'event','name','surname','sex','country','performance','date', 
+  displayedColumns: string[] = ['category', 'event','name','surname','genre','country','performance','date', 
   'meeting', 'location', 'action'];
 
   //selectedCategory: string;
