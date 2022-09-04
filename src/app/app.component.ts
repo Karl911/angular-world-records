@@ -24,10 +24,15 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.getAllProducts();
   }
-  openDialog() {
-    this.dialog.open(DialogComponent, {
-      width:'30%'
-    });
+      openDialog() {
+        this.dialog.open(DialogComponent, {
+          width:'30%'
+        })
+    .afterClosed().subscribe(val=>{
+        if (val ==='save') {
+          this.getAllProducts();
+        }
+    })
   }
 
   getAllProducts(){
@@ -49,6 +54,11 @@ export class AppComponent implements OnInit{
       width : '30%',
       data : row 
     })
+    .afterClosed().subscribe(val=>{
+      if (val ==='update') {
+        this.getAllProducts();
+      }
+    })
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -57,5 +67,18 @@ export class AppComponent implements OnInit{
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  deleteProduct(id : number){
+    this.api.deleteProduct(id) 
+    .subscribe({ 
+      next:(res) => {
+        alert("Delete product successfuly");
+        this.getAllProducts();
+      },
+      error:(err) =>{
+        alert("Error while fetching the records");
+      }
+    })
   }
 }

@@ -4,7 +4,7 @@
       "productName": "Apple",
       "category": "Fruits",
       "freshness": "Brand New",
-      "price": 102,
+      "price": 108,
       "comment": "This is a fresh apple",
       "date": "2022-09-01T22:00:00.000Z",
       "id": 1
@@ -62,6 +62,24 @@
       "comment": "This is a fresh apple",
       "date": "2022-09-29T22:00:00.000Z",
       "id": 7
+    },
+    {
+      "productName": "Litchi",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": 140,
+      "comment": "This is a fresh litchi",
+      "date": "2022-09-04T22:00:00.000Z",
+      "id": 8
+    },
+    {
+      "productName": "iPhone X",
+      "category": "Electronics",
+      "freshness": "Second Hand",
+      "price": 1990,
+      "comment": "Good state",
+      "date": "2022-09-04T22:00:00.000Z",
+      "id": 9
     }
   ],
   "comments": [
