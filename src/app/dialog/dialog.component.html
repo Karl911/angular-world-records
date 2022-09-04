@@ -1,42 +1,65 @@
-<h1 mat-dialog-title>Add Product Form</h1>
+<h1 mat-dialog-title>Ajouter un record</h1>
 <div mat-dialog-content>
-    <form [formGroup]="productForm">
+    <form [formGroup]="worldRecordForm">
+ <!--  <mat-form-field appearance="fill">
+            <mat-label>Category</mat-label>
+            <select matNativeControl [(ngModel)]="selectedCategory" name="category">
+              <option value="" selected></option>
+              <option *ngFor="let category of categories" [value]="category.value">
+                {{category.viewValue}}
+              </option>
+            </select>
+          </mat-form-field> -->
+          <mat-form-field appearance="fill">
+            <mat-label>Categorie</mat-label>
+            <select matNativeControl formControlName="category">
+              <option value="Athlétisme">Athlétisme</option>
+              <option value="Natation">Natation</option>
+              <option value="Gymnastique">Gymnastique</option>
+            </select>
+          </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Product Name</mat-label>
-            <input formControlName="productName" matInput placeholder="Name">
+            <mat-label>Discipline</mat-label>
+            <input formControlName="event" matInput placeholder="event">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Product Category</mat-label>
-            <mat-select formControlName="category" placeholder="Category">
-                <mat-option value="Fruits">Fruits</mat-option>
-                <mat-option value="Vegetables">Vegetables</mat-option>
-                <mat-option value="Electronics">Electronics </mat-option>
-            </mat-select> 
+            <mat-label>Nom</mat-label>
+            <input formControlName="name" matInput placeholder="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Prénom</mat-label>
+            <input formControlName="surname" matInput placeholder="surname">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Sexe</mat-label>
+            <input formControlName="sex" matInput placeholder="sex">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Pays</mat-label>
+            <input formControlName="country" matInput placeholder="country">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Perf.</mat-label>
+            <input formControlName="performance" matInput placeholder="performance">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Choose a date</mat-label>
             <input formControlName="date" matInput [matDatepicker]="picker">
-            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-hint>DD/MM/YYYY</mat-hint>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <label for=""><h1>Product Freshness</h1></label>
-        <mat-radio-group formControlName="freshness" class="example-radio-group">
-            <mat-radio-button class="example-radio-button" *ngFor="let fresh of freshnessList"  [value]="fresh"> 
-                {{fresh}}
-            </mat-radio-button>
-        </mat-radio-group>
         <mat-form-field appearance="outline">
-            <mat-label>Price</mat-label>
-            <input formControlName="price" matInput type="number" placeholder="Price">
+            <mat-label>Meeting</mat-label>
+            <input formControlName="meeting" matInput placeholder="meeting">
         </mat-form-field>
-        <mat-form-field appearance="outline"> 
-            <mat-label>Comment</mat-label>
-            <textarea formControlName="comment" matInput></textarea>
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Lieu</mat-label>
+            <input formControlName="location" matInput placeholder="location">
+        </mat-form-field>    
     </form>
 </div>
 <div mat-dialog-action [align]="'end'"> 
     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addProduct()">{{actionBtn}}</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addWorldRecord()">{{actionBtn}}</button>
 </div>

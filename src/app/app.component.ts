@@ -6,6 +6,11 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource, _MatTableDataSource } from '@angular/material/table';
 
+interface Category {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,7 +18,16 @@ import { MatTableDataSource, _MatTableDataSource } from '@angular/material/table
 })
 export class AppComponent implements OnInit{
   title = 'angular-products';
-  displayedColumns: string[] = ['productName', 'category', 'date', 'freshness', 'price','comment', 'action'];
+  displayedColumns: string[] = ['category', 'event','name','surname','sex','country','performance','date', 
+  'meeting', 'location', 'action'];
+
+  //selectedCategory: string;
+
+/*   categories: Category[] = [
+    {value: 'volvo', viewValue: 'Volvo'},
+    {value: 'saab', viewValue: 'Saab'},
+    {value: 'mercedes', viewValue: 'Mercedes'},
+  ]; */
   dataSource!: MatTableDataSource<any >;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -22,7 +36,7 @@ export class AppComponent implements OnInit{
     
   }
   ngOnInit(): void {
-    this.getAllProducts();
+    this.getAllWorldRecords();
   }
       openDialog() {
         this.dialog.open(DialogComponent, {
@@ -30,13 +44,13 @@ export class AppComponent implements OnInit{
         })
     .afterClosed().subscribe(val=>{
         if (val ==='save') {
-          this.getAllProducts();
+          this.getAllWorldRecords();
         }
     })
   }
 
-  getAllProducts(){
-    this.api.getProduct()
+  getAllWorldRecords(){
+    this.api.getWorldRecords()
     .subscribe({ 
       next:(res) => {
         this.dataSource = new MatTableDataSource(res);
@@ -50,14 +64,14 @@ export class AppComponent implements OnInit{
     })
   }
 
-  editProduct(row : any) {
+  editWorldRecord(row : any) {
     this.dialog.open(DialogComponent, {
       width : '30%',
       data : row 
     })
     .afterClosed().subscribe(val=>{
       if (val ==='update') {
-        this.getAllProducts();
+        this.getAllWorldRecords();
       }
     })
   }
@@ -70,12 +84,12 @@ export class AppComponent implements OnInit{
     }
   }
 
-  deleteProduct(id : number){
-    this.api.deleteProduct(id) 
+  deleteWorldRecord(id : number){
+    this.api.deleteWorldRecord(id) 
     .subscribe({ 
       next:(res) => {
-        alert("Delete product successfuly");
-        this.getAllProducts();
+        alert("Delete word record successfuly");
+        this.getAllWorldRecords();
       },
       error:(err) =>{
         alert("Error while fetching the records");

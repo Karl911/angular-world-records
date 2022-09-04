@@ -1,103 +1,30 @@
 {
-  "productList": [
+  "worldRecordList": [
     {
-      "productName": "Apple",
-      "category": "Fruits",
-      "freshness": "Brand New",
-      "price": 108,
-      "comment": "This is a fresh apple",
+      "category": "Athlétisme",
+      "event": "100m",
+      "name": "Bolt",
+      "surname": "Usain",
+      "sex": "H",
+      "country": "Jamaïque",
+      "performance": "9.58s",
       "date": "2022-09-01T22:00:00.000Z",
+      "meeting": "Championnat du monde",
+      "location": "Berlin",
       "id": 1
     },
     {
-      "productName": "Pear",
-      "category": "Fruits",
-      "freshness": "Brand New ",
-      "price": 125,
-      "comment": "This pear is fresh",
-      "date": "2022-09-01T22:00:00.000Z",
+      "category": "Athlétisme",
+      "event": "200m",
+      "name": "Bolt",
+      "surname": "Usain",
+      "sex": "H",
+      "country": "Jamaïque",
+      "performance": "19.19s",
+      "date": "2022-09-20T22:00:00.000Z",
+      "meeting": "Championnat du monde",
+      "location": "Berlin",
       "id": 2
-    },
-    {
-      "productName": "Mango",
-      "category": "Fruits",
-      "freshness": "Second Hand",
-      "price": 250,
-      "comment": "This is not fresh",
-      "date": "2022-09-01T22:00:00.000Z",
-      "id": 3
-    },
-    {
-      "productName": "Strawberry",
-      "category": "Fruits",
-      "freshness": "Brand New",
-      "price": 130,
-      "comment": "This is a fresh strawberry",
-      "date": "2022-09-02T22:00:00.000Z",
-      "id": 4
-    },
-    {
-      "productName": "Banana",
-      "category": "Fruits",
-      "freshness": "Brand New",
-      "price": 70,
-      "comment": "Fresh Bananas !",
-      "date": "2022-09-03T22:00:00.000Z",
-      "id": 5
-    },
-    {
-      "productName": "OnePlus 8 pro",
-      "category": "Electronics",
-      "freshness": "Refurbished",
-      "price": 1500,
-      "comment": "Good status!",
-      "date": "2022-09-03T22:00:00.000Z",
-      "id": 6
-    },
-    {
-      "productName": "Apple",
-      "category": "Fruits",
-      "freshness": "Brand New",
-      "price": 100,
-      "comment": "This is a fresh apple",
-      "date": "2022-09-29T22:00:00.000Z",
-      "id": 7
-    },
-    {
-      "productName": "Litchi",
-      "category": "Fruits",
-      "freshness": "Brand New",
-      "price": 140,
-      "comment": "This is a fresh litchi",
-      "date": "2022-09-04T22:00:00.000Z",
-      "id": 8
-    },
-    {
-      "productName": "iPhone X",
-      "category": "Electronics",
-      "freshness": "Second Hand",
-      "price": 1990,
-      "comment": "Good state",
-      "date": "2022-09-04T22:00:00.000Z",
-      "id": 9
-    },
-    {
-      "productName": "Samsung S10",
-      "category": "Electronics",
-      "freshness": "Brand New",
-      "price": 2500,
-      "comment": "Never used !",
-      "date": "2022-09-04T22:00:00.000Z",
-      "id": 10
-    },
-    {
-      "productName": "Xiaomi RedMi 7",
-      "category": "Electronics",
-      "freshness": "Brand New",
-      "price": 2800,
-      "comment": "Never used !",
-      "date": "2022-09-04T22:00:00.000Z",
-      "id": 11
     }
   ],
   "comments": [

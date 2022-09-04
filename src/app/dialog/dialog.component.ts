@@ -1,17 +1,49 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators  } from '@angular/forms';
+import { FormGroup, FormGroupDirective, FormBuilder, FormControl, NgForm, Validators  } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA   } from '@angular/material/dialog';
+import { ErrorStateMatcher } from '@angular/material/core';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
+interface Category {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss']
 })
+
 export class DialogComponent implements OnInit {
 
-  freshnessList = ["Brand New", "Second Hand", "Refurbished"];
-  productForm !: FormGroup;
+  selected = new FormControl('valid', [Validators.required, Validators.pattern('valid')]);
+
+  selectFormControl = new FormControl('valid', [Validators.required, Validators.pattern('valid')]);
+
+  disableSelect = new FormControl(false);
+
+  categories: Category[] = [
+    {value: 'volvo', viewValue: 'Volvo'},
+    {value: 'saab', viewValue: 'Saab'},
+    {value: 'mercedes', viewValue: 'Mercedes'},
+  ];
+
+  nativeSelectFormControl = new FormControl('valid', [
+    Validators.required,
+    Validators.pattern('valid'),
+  ]);
+
+  matcher = new MyErrorStateMatcher();
+
+  worldRecordForm !: FormGroup;
   actionBtn : string = "Save";
   constructor(private formBuilder : FormBuilder, 
     private api : ApiService, 
@@ -19,59 +51,69 @@ export class DialogComponent implements OnInit {
     private dialogRef : MatDialogRef<DialogComponent>) { }
 
   ngOnInit(): void {
-    this.productForm = this.formBuilder.group({
-      productName : ['', Validators.required],
+    this.worldRecordForm = this.formBuilder.group({
+      
       category : ['', Validators.required],
-      freshness : ['', Validators.required],
-      price : ['', Validators.required],
-      comment : ['', Validators.required],
-      date : ['', Validators.required]
+      event : ['', Validators.required],
+      name : ['', Validators.required],
+      surname : ['', Validators.required],
+      sex : ['', Validators.required],
+      country : ['', Validators.required],
+      performance : ['', Validators.required],
+      date : ['', Validators.required],
+      meeting : [''],
+      location : ['']
+
     }) 
 
     //console.log(this.editData);
     if (this.editData) {
       this.actionBtn = "Update";
-      this.productForm.controls['productName'].setValue(this.editData.productName);
-      this.productForm.controls['category'].setValue(this.editData.category);
-      this.productForm.controls['freshness'].setValue(this.editData.freshness);
-      this.productForm.controls['price'].setValue(this.editData.price);
-      this.productForm.controls['comment'].setValue(this.editData.comment);
-      this.productForm.controls['date'].setValue(this.editData.date);
+      this.worldRecordForm.controls['category'].setValue(this.editData.category);
+      this.worldRecordForm.controls['event'].setValue(this.editData.event);
+      this.worldRecordForm.controls['name'].setValue(this.editData.name);
+      this.worldRecordForm.controls['surname'].setValue(this.editData.surname);
+      this.worldRecordForm.controls['sex'].setValue(this.editData.sex);
+      this.worldRecordForm.controls['country'].setValue(this.editData.country);
+      this.worldRecordForm.controls['performance'].setValue(this.editData.performance);
+      this.worldRecordForm.controls['date'].setValue(this.editData.date);
+      this.worldRecordForm.controls['meeting'].setValue(this.editData.meeting);
+      this.worldRecordForm.controls['location'].setValue(this.editData.location);
     }
   }
 
-  addProduct()  {
+  addWorldRecord()  {
    if (!this.editData) {
-    if (this.productForm.valid) {
-      this.api.postProduct(this.productForm.value)
+    if (this.worldRecordForm.valid) {
+      this.api.postWorldRecord(this.worldRecordForm.value)
       .subscribe({
         next:(res)=> {
-          alert("Product added successfully");
-          this.productForm.reset();
+          alert("Record enregistré !");
+          this.worldRecordForm.reset();
           this.dialogRef.close('save');
         }, 
         error:()=> {
-          alert("Error while adding the product")
+          alert("Erreur lors de l'enregistrement du record")
         }
       })
     }
    }
    else {
-    this.updateProduct();
+    this.updateWorldRecord();
   }
-  //console.log(this.productForm.value);
+  //console.log(this.worldRecordForm.value);
   }
-  //this.updateProduct
-  updateProduct(){
-     this.api.putProduct(this.productForm.value, this.editData.id)
+
+  updateWorldRecord(){
+     this.api.putWorldRecord(this.worldRecordForm.value, this.editData.id)
      .subscribe({
       next:(res)=> {
-        alert("Product updated successfully");
-        this.productForm.reset();
+        alert("Modification du record effectué");
+        this.worldRecordForm.reset();
         this.dialogRef.close('update');
       }, 
       error:()=> {
-        alert("Error while updating the record ")
+        alert("Erreur lors de la modification du record ")
       }
     }) 
   }
