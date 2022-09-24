@@ -155,6 +155,58 @@
       "meeting": "",
       "location": "Valence",
       "id": 12
+    },
+    {
+      "category": "Athlétisme",
+      "event": "10km (route)",
+      "name": "Kipruto",
+      "surname": "Rhonex",
+      "sex": "H",
+      "country": "Kenya",
+      "performance": "26 min 24 s",
+      "date": "2020-01-11T23:00:00.000Z",
+      "meeting": "10K Valencia Ibercaja",
+      "location": "Valence",
+      "id": 13
+    },
+    {
+      "category": "Athlétisme",
+      "event": "Semi marathon",
+      "name": "Kiplimo",
+      "surname": "Jacob",
+      "sex": "H",
+      "country": "Ouganda",
+      "performance": "57 min 31 s",
+      "date": "2021-11-20T23:00:00.000Z",
+      "meeting": "EDP Lisbon Half Marathon",
+      "location": "Lisbonne",
+      "id": 14
+    },
+    {
+      "category": "Athlétisme",
+      "event": "One Hour",
+      "name": "Farah",
+      "surname": "Mohamed",
+      "sex": "H",
+      "country": "Grande Bretagne",
+      "performance": "21,330 km",
+      "date": "2020-09-03T22:00:00.000Z",
+      "meeting": "Diamond League",
+      "location": "Bruxelles",
+      "id": 15
+    },
+    {
+      "category": "Athlétisme",
+      "event": "Marathon",
+      "name": "Kipchoge",
+      "surname": "Eliud",
+      "sex": "H",
+      "country": "Kenya",
+      "performance": "2 h 1 min 39 s",
+      "date": "2018-09-15T22:00:00.000Z",
+      "meeting": "Marathon de Berlin",
+      "location": "Berlin",
+      "id": 16
     }
   ],
   "comments": [
